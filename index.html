@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -482,7 +482,6 @@ rgba(var(--color-accent-blue), 0.52)
 background-size: 260% 260%;
 opacity: 0;
 transition: opacity var(--transition-speed), filter var(--transition-speed);
-
 }
 
 .card::after,
@@ -507,6 +506,7 @@ transform var(--transition-speed),
 border-color var(--transition-speed),
 box-shadow var(--transition-speed);
 }
+
 .card-icon {
 width: 48px;
 height: 48px;
@@ -590,6 +590,7 @@ linear-gradient(180deg, transparent 24%, rgba(0, 0, 0, 0.84) 100%),
 radial-gradient(circle at 50% 18%, rgba(var(--color-accent-blue), 0.11), transparent 34%);
 pointer-events: none;
 }
+
 .video-info {
 position: absolute;
 left: 22px;
@@ -630,7 +631,6 @@ transform var(--transition-speed),
 border-color var(--transition-speed),
 box-shadow var(--transition-speed);
 }
-
 
 .price-card.featured {
 border-color: rgba(var(--color-accent-blue), 0.48);
@@ -823,90 +823,91 @@ transition: opacity 0.8s ease, transform 0.8s ease;
 opacity: 1;
 transform: translateY(0);
 }
-/* FINAL CARD HOVER SYSTEM - single active hover system */
+
 .card,
 .price-card,
 .video-card {
-    position: relative;
-    isolation: isolate;
-    border: 1px solid rgba(255, 255, 255, 0.11);
-    box-shadow: 0 18px 56px rgba(0, 0, 0, 0.28);
-    transition:
-        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-        box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 0.45s ease;
+position: relative;
+isolation: isolate;
+border: 1px solid rgba(255, 255, 255, 0.11);
+box-shadow: 0 18px 56px rgba(0, 0, 0, 0.28);
+transition:
+transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+border-color 0.45s ease;
 }
 
 .card::before,
 .price-card::before,
 .video-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    padding: 1px;
-    pointer-events: none;
-    background: linear-gradient(
-        135deg,
-        rgba(var(--color-accent-blue), 0.95),
-        rgba(var(--color-accent-purple), 0.8),
-        rgba(var(--color-accent-pink), 0.78),
-        rgba(var(--color-accent-blue), 0.9)
-    );
-    background-size: 300% 300%;
-    opacity: 0;
-    transition: opacity 0.45s ease;
-    -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-    mask-composite: exclude;
+content: "";
+position: absolute;
+inset: 0;
+z-index: 3;
+padding: 1px;
+pointer-events: none;
+background: linear-gradient(
+135deg,
+rgba(var(--color-accent-blue), 0.95),
+rgba(var(--color-accent-purple), 0.8),
+rgba(var(--color-accent-pink), 0.78),
+rgba(var(--color-accent-blue), 0.9)
+);
+background-size: 300% 300%;
+opacity: 0;
+transition: opacity 0.45s ease;
+-webkit-mask:
+linear-gradient(#000 0 0) content-box,
+linear-gradient(#000 0 0);
+-webkit-mask-composite: xor;
+mask:
+linear-gradient(#000 0 0) content-box,
+linear-gradient(#000 0 0);
+mask-composite: exclude;
 }
 
 .card:hover,
 .price-card:hover,
 .video-card:hover {
-    transform: translateY(-6px) scale(1.02);
-    border-color: rgba(255, 255, 255, 0.04);
-    box-shadow:
-        0 26px 76px rgba(0, 0, 0, 0.42),
-        0 0 26px rgba(var(--color-accent-blue), 0.18),
-        0 0 38px rgba(var(--color-accent-pink), 0.10);
+transform: translateY(-6px) scale(1.02);
+border-color: rgba(255, 255, 255, 0.04);
+box-shadow:
+0 26px 76px rgba(0, 0, 0, 0.42),
+0 0 26px rgba(var(--color-accent-blue), 0.18),
+0 0 38px rgba(var(--color-accent-pink), 0.10);
 }
 
 .card:hover::before,
 .price-card:hover::before,
 .video-card:hover::before {
-    opacity: 1;
-    animation: neonBorderFlow 7s ease infinite;
+opacity: 1;
+animation: neonBorderFlow 7s ease infinite;
 }
 
 .video-card:hover video {
-    transform: scale(1.055);
-    filter: brightness(0.94) saturate(1.08) contrast(1.07);
+transform: scale(1.055);
+filter: brightness(0.94) saturate(1.08) contrast(1.07);
 }
 
 .card:hover .card-icon {
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(var(--color-accent-blue), 0.16);
+transform: translateY(-2px);
+box-shadow: 0 0 20px rgba(var(--color-accent-blue), 0.16);
 }
 
 @keyframes neonBorderFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+0% {
+background-position: 0% 50%;
 }
+
+50% {
+background-position: 100% 50%;
+}
+
+100% {
+background-position: 0% 50%;
+}
+}
+
 @keyframes editingFloat {
 0% {
 transform: translate3d(0, 0, 0) rotate(-1deg);
@@ -1289,35 +1290,73 @@ element.classList.add('visible');
 });
 }
 
-document.querySelectorAll('.video-card video').forEach((video) => {
+const previewVideos = document.querySelectorAll('.video-card video');
+
+const getVideoSource = (video) => {
+const source = video.querySelector('source');
+return video.currentSrc || video.getAttribute('src') || (source ? source.src : '');
+};
+
+const pausePreviewVideo = (video, reset = false) => {
+video.pause();
+if (reset) {
+try {
+video.currentTime = 0;
+} catch (error) {}
+}
+};
+
+previewVideos.forEach((video) => {
 const card = video.closest('.video-card');
+if (!card) return;
+
+video.preload = 'metadata';
 
 card.addEventListener('mouseenter', () => {
+const modal = document.getElementById('videoModal');
+if (modal && modal.classList.contains('active')) return;
+video.muted = true;
 video.play().catch(() => {});
 });
 
 card.addEventListener('mouseleave', () => {
-video.pause();
-video.currentTime = 0;
+pausePreviewVideo(video, true);
 });
 
 card.addEventListener('touchstart', () => {
+const modal = document.getElementById('videoModal');
+if (modal && modal.classList.contains('active')) return;
 if (video.paused) {
+video.muted = true;
 video.play().catch(() => {});
 } else {
-video.pause();
+pausePreviewVideo(video, false);
 }
 }, { passive: true });
+
+video.addEventListener('click', (event) => {
+event.stopPropagation();
+});
+
+card.addEventListener('click', (event) => {
+if (event.target.closest('video')) return;
+const src = getVideoSource(video);
+if (src && typeof window.openVideo === 'function') {
+window.openVideo(src);
+}
+});
 });
 
 const contactForm = document.getElementById('contactForm');
 
+if (contactForm) {
 contactForm.addEventListener('submit', (event) => {
 event.preventDefault();
 
 const button = contactForm.querySelector('button[type="submit"]');
-const originalText = button.textContent;
+if (!button) return;
 
+const originalText = button.textContent;
 button.textContent = 'Message Ready';
 
 setTimeout(() => {
@@ -1325,6 +1364,7 @@ button.textContent = originalText;
 contactForm.reset();
 }, 1400);
 });
+}
 </script>
 
 <div id="videoModal" style="
@@ -1341,27 +1381,65 @@ z-index:9999;
 </div>
 
 <script>
-function openVideo(src) {
-const modal = document.getElementById("videoModal");
-const video = document.getElementById("fullVideo");
+const videoModal = document.getElementById('videoModal');
+const fullVideo = document.getElementById('fullVideo');
 
-video.src = src;
-modal.style.display = "flex";
-modal.classList.add("active");
-video.play();
-}
+function closeVideo() {
+if (!videoModal || !fullVideo) return;
 
-document.getElementById("videoModal").onclick = function() {
-this.classList.remove("active");
+videoModal.classList.remove('active');
+fullVideo.pause();
 
 setTimeout(() => {
-this.style.display = "none";
+if (!videoModal.classList.contains('active')) {
+videoModal.style.display = 'none';
+fullVideo.removeAttribute('src');
+fullVideo.load();
+}
 }, 300);
+}
 
-const video = document.getElementById("fullVideo");
+function openVideo(src) {
+if (!videoModal || !fullVideo || !src) return;
+
+document.querySelectorAll('.video-card video').forEach((video) => {
 video.pause();
+try {
 video.currentTime = 0;
-};
+} catch (error) {}
+});
+
+fullVideo.pause();
+fullVideo.src = src;
+fullVideo.load();
+videoModal.style.display = 'flex';
+requestAnimationFrame(() => {
+videoModal.classList.add('active');
+fullVideo.play().catch(() => {});
+});
+}
+
+window.openVideo = openVideo;
+
+if (fullVideo) {
+fullVideo.addEventListener('click', (event) => {
+event.stopPropagation();
+});
+}
+
+if (videoModal) {
+videoModal.addEventListener('click', (event) => {
+if (event.target === videoModal) {
+closeVideo();
+}
+});
+}
+
+document.addEventListener('keydown', (event) => {
+if (event.key === 'Escape' && videoModal && videoModal.classList.contains('active')) {
+closeVideo();
+}
+});
 </script>
 </body>
 </html>
